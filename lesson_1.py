@@ -86,7 +86,7 @@ first_name = "Stepan"
 last_name = "Bandera"
 full_name = first_name + " " + last_name
 
-message = f"Dear {first_name}, we inform you that you have purchased a ticket to travel to the island of Mauritius. Departure June 31 of this year. Have a passport at {full_name}. We are looking forward to seeing you!"
+message = f"Dear {first_name}, we inform you that you have purchased a ticket to travel to the island of Mauritius.Departure June 31 of this year. Have a passport at {full_name}. We are looking forward to seeing you!"
 
 print(message)            
 # ***
@@ -116,7 +116,7 @@ print(complex)
 print(complex.real)  # 3.14 действительная часть числа
 print(complex.imag)  # 1.0  мнимую часть чисел
 
-# сложение чисел с мнимой частью
+# # сложение чисел с мнимой частью
 a= -2 + 3j
 b= 4 +2.1j
 result = a + b
@@ -134,14 +134,14 @@ print (result)
 # x1 = (-b + D0.5) / (2 · a)
 # x2 = (-b - D0.5) / (2 · a)
 
-import math
+# import math
 
 a = -2
 b = 7
 c = -6
 D = b**2 - 4 * a * c  # Дискриминант этого уравнения
-x1 = (-b + D**0.5)/(2 * a)  # корень уравнения 1
-x2 = (-b - D**0.5)/(2 * a)  # корень уравнения 1
+x1 = (-b + math.sqrt(D))/(2 * a)  # корень уравнения 1
+x2 = (-b - math.sqrt(D))/(2 * a)  # корень уравнения 1
 kku = a * x1**2 + b * x2 + c  # квадратноt уравнениt
 kku_math = math.sqrt(a * x1**2 + b * x2 + c)  # корень квадратного уравнения
 
@@ -250,7 +250,6 @@ print('Ваш email - ', email)
 print('Ваш возраст - ', age)
 print('Ваше рост - ', height)
 print('Рассылка уведомлений - ', is_active)
-
 # ***
 
 # 16 задание 
