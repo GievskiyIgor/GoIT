@@ -3,7 +3,22 @@
 # 1 задание
 # ***
 # 2 задание
+def invite_to_event(username):
+    
+    if not username == ' ':
+        print(f"Dear {username}, we have the honour to invite you to our event")
+
+def pool_username ():
+    
+    return ('Игорь', 'Максим', 'Руслан', 'Богдан', ' ')
+
+# username = input('Введите имя: ')
+
+for pool in pool_username():
+    # if not username == '' or not username == None:
+    invite_to_event(pool)
 # ***
+
 # 3 задание
 # ***
 # 4 задание

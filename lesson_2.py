@@ -320,6 +320,7 @@ while True:
 # "Hello my little friends!", offset = 37,
 # "Hello world!", offset = 7
 
+# 1 вариант 
 message = input("Введите сообщение: ")
 offset = int(input("Введите сдвиг: ")) 
 encoded_message = ""
@@ -371,6 +372,47 @@ for ch in message:
     encoded_message += new_char
     
 print (encoded_message)
+
+# 2 вариант
+message = input("Введите сообщение: ")
+offset = int(input("Введите сдвиг: "))
+encoded_message = ""
+
+pos_alfavit_r = ord('A')
+pos_alfavit_n = ord('a')
+
+for ch in message:
+
+    registr_str = str.isupper(ch)
+    pos_ch = ord(ch)
+
+    if ch.istitle() or ch.islower():
+
+        if registr_str:  # проверка на верхний регистр
+            pos = pos_ch - pos_alfavit_r
+            pos_alfavit = pos_alfavit_r
+            pos_alfavit_r += 1 if pos_alfavit_r <= 90 else ord('A')
+        else:  # нижний регистр
+            pos = pos_ch - pos_alfavit_n
+            pos_alfavit = pos_alfavit_n
+            pos_alfavit_n += 1 if pos_alfavit_n <= 122 else ord('a')
+
+        pos = (pos + offset) % 26
+        pos_promegytok = pos + pos_alfavit
+
+        if pos_promegytok > 90 and pos_promegytok < 97:  # закончились заглавные буквы, начались символы,'А'
+            new_char = chr(ord('A') + (pos_promegytok-90)-1)
+        elif pos_promegytok > 122: # закончились прописные буквы, начались символы, 'а'
+            new_char = chr(ord('a') + (pos_promegytok-122)-1)
+        else:
+            new_char = chr(pos + pos_alfavit)
+    else:
+        new_char = ch
+
+    encoded_message += new_char
+
+print(encoded_message)
+
 # ***
 
 # 14 задание
